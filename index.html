@@ -1,16 +1,33 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Service unavailable</title>
-        <link rel="shortcut icon" type="image/png" href="assets/icon.jpg">
-        <meta name="color-scheme" content="light dark">
+<html lang="en">
+	<head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="robots" content="noindex">
+
+        <title>Service unavailable</title>
+
+		<link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="shortcut icon" type="image/png" href="assets/icon.jpg">
     </head>
     <body>
-        <h1>Oh no!</h1>
-        <p>The website you are trying to reach is currently down. Your URL works, but the system is in maintenance and powered off temporarily.</p>
+    <main>
+        <h1>Oh, no!</h1>
+        <p>The website you are trying to reach is currently down. Your URL works, but the system is in maintenance and/or powered off temporarily.</p>
         <p>Please come back later!</p>
         <p>Kind regards, <a href="https://tibo.depeuter.dev">Tibo De Peuter</a></p>
+
+        <div id="checkContainer"></div>
         <img src="/assets/oh-no-kitten.jpg" alt="kitten holding paw to forehead"/>
+    </main>
+
+    <footer>
+        <p>
+            Made with <span class="heart">&hearts;</span>.
+            <a href="https://git.depeuter.dev/tdpeuter/down-website" about="source code of this webpage" class="hidden">Source code</a>
+        </p>
+    </footer>
+
+    <script src="script.js"></script>
     </body>
 </html>
