@@ -1,3 +1,22 @@
+:root {
+    /* Support dark mode */
+    color-scheme: light dark;
+}
+
+body {
+    margin: 20px;
+    padding: 10px;
+}
+
+footer {
+    opacity: 0.6;
+    font-size: small;
+
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
 .dot {
     width: 15px;
     height: 15px;
@@ -16,4 +35,47 @@
 
 .dot.red {
     background-color: red;
+}
+
+.heart {
+    color: #CD001A; /* Cherry red */
+}
+
+/* Don't let media go offscreen */
+img,
+picture,
+video {
+    max-width: 100%;
+    padding: 2% 0;
+}
+
+/* Display the button in the center of small screens such as phones */
+@media screen and (max-device-width: 1000px) {
+    #checkContainer {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+/* Hover animation for URLs */
+a {
+    text-decoration: none;
+    color: inherit; /* Reset to default text color */
+    position: relative;
+}
+
+a::before {
+    content: '';
+    position: absolute;
+    /* Height of the line */
+    bottom: -2px;
+    height: 2px;
+    left: 0;
+    width: 0;
+    background-color: orange;
+    transition: width 0.3s ease;
+}
+
+a:hover::before {
+    width: 100%;
 }
