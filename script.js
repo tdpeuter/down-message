@@ -48,13 +48,23 @@ function createCheckButton(destination) {
 	check(destination, container, dot, message, button);
 }
 
+function createTryAgainButton(destination) {
+	const button = document.createElement('button');
+	button.textContent = 'Try Again';
+	button.onclick = function () {
+		window.location.href = destination;
+	}
+
+	document.getElementById('checkContainer').appendChild(button);
+}
+
 function checkDestination() {
     const url = window.location.search;
     const searchParams = new URLSearchParams(url);
     const destination = searchParams.get('destination');
 
     if (destination) {
-        createCheckButton(destination);
+        createTryAgainButton(destination);
     }
 }
 
