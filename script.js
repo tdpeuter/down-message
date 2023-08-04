@@ -1,15 +1,18 @@
 async function websiteUp(url) {
 	// TODO Fix CORS
 	try {
-		const response = await fetch(url, { method: 'head' });
-		console.log(response);
-		return false;
+		const response = await fetch(url, { method: 'options' });
+		return response.ok;
 	} catch (error) {
 		console.error(`An error occurred while checking the URL '${url}': ${error.message}`);
 	}
 }
 
 async function check(destination, container, dot, message, button) {
+	dot.className = 'dot orange';
+	message.textContent = 'Checking availability...';
+	button.style.visibility = 'hidden';
+
 	const destinationUp = await websiteUp(destination);
 
 	if (destinationUp) {
@@ -34,14 +37,8 @@ async function check(destination, container, dot, message, button) {
 
 function createCheckButton(destination) {
 	const dot = document.createElement('span');
-	dot.className = 'dot orange';
-	dot.id = 'checkDot';
-
 	const message = document.createElement('span');
-	message.textContent = 'Checking availability...';
-
 	const button = document.createElement('button');
-	button.style.visibility = 'hidden';
 
 	const container = document.getElementById('checkContainer');
 	container.appendChild(dot);
